@@ -131,6 +131,6 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
     }
     
     private func searchMovieRequest(searchText: String) {
-        viewModel.searchMovies(query: searchText)
+        viewModel.searchMovies(query: searchText.lowercased())
     }
 }

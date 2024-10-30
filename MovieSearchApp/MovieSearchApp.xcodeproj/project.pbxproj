@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F1F2B63C2CD288A900D5B6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B63B2CD288A900D5B6A5 /* AppDelegate.swift */; };
 		F1F2B63E2CD288A900D5B6A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B63D2CD288A900D5B6A5 /* SceneDelegate.swift */; };
-		F1F2B6402CD288A900D5B6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B63F2CD288A900D5B6A5 /* ViewController.swift */; };
 		F1F2B6432CD288A900D5B6A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F1F2B6422CD288A900D5B6A5 /* Base */; };
 		F1F2B6452CD288AB00D5B6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1F2B6442CD288AB00D5B6A5 /* Assets.xcassets */; };
 		F1F2B6482CD288AB00D5B6A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F1F2B6472CD288AB00D5B6A5 /* Base */; };
@@ -17,7 +16,21 @@
 		F1F2B65D2CD288AC00D5B6A5 /* MovieSearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B65C2CD288AC00D5B6A5 /* MovieSearchAppUITests.swift */; };
 		F1F2B65F2CD288AC00D5B6A5 /* MovieSearchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B65E2CD288AC00D5B6A5 /* MovieSearchAppUITestsLaunchTests.swift */; };
 		F1F2B6732CD28B5F00D5B6A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6722CD28B5F00D5B6A5 /* Constants.swift */; };
-		F1F2B6762CD28C7C00D5B6A5 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6752CD28C7C00D5B6A5 /* ApplicationServiceProvider.swift */; };
+		F1F2B6792CD2933000D5B6A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6782CD2933000D5B6A5 /* SearchViewController.swift */; };
+		F1F2B67C2CD2961D00D5B6A5 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B67B2CD2961D00D5B6A5 /* MovieModel.swift */; };
+		F1F2B67E2CD2965900D5B6A5 /* SearchMovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B67D2CD2965900D5B6A5 /* SearchMovieListModel.swift */; };
+		F1F2B6802CD296C800D5B6A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B67F2CD296C800D5B6A5 /* NetworkManager.swift */; };
+		F1F2B6822CD296D600D5B6A5 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6812CD296D600D5B6A5 /* EndPoint.swift */; };
+		F1F2B6842CD296E200D5B6A5 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6832CD296E200D5B6A5 /* MovieService.swift */; };
+		F1F2B6862CD296F400D5B6A5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6852CD296F400D5B6A5 /* AppSettings.swift */; };
+		F1F2B6882CD2982D00D5B6A5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6872CD2982D00D5B6A5 /* SearchViewModel.swift */; };
+		F1F2B68A2CD2995700D5B6A5 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6892CD2995700D5B6A5 /* UIView+Extentions.swift */; };
+		F1F2B68E2CD29C9700D5B6A5 /* MovieInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F2B68D2CD29C9700D5B6A5 /* MovieInfoTableViewCell.xib */; };
+		F1F2B68F2CD29C9700D5B6A5 /* MovieInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B68C2CD29C9700D5B6A5 /* MovieInfoTableViewCell.swift */; };
+		F1F2B6922CD29E6400D5B6A5 /* ImageCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6912CD29E6400D5B6A5 /* ImageCacheHelper.swift */; };
+		F1F2B6942CD29F5B00D5B6A5 /* SearchViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6932CD29F5B00D5B6A5 /* SearchViewController+Delegates.swift */; };
+		F1F2B6962CD2A05C00D5B6A5 /* LoadingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6952CD2A05C00D5B6A5 /* LoadingHelper.swift */; };
+		F1F2B6992CD2A08E00D5B6A5 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = F1F2B6982CD2A08E00D5B6A5 /* RappleProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +54,6 @@
 		F1F2B6382CD288A900D5B6A5 /* MovieSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F2B63B2CD288A900D5B6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1F2B63D2CD288A900D5B6A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1F2B63F2CD288A900D5B6A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1F2B6422CD288A900D5B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1F2B6442CD288AB00D5B6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1F2B6472CD288AB00D5B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +64,20 @@
 		F1F2B65C2CD288AC00D5B6A5 /* MovieSearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchAppUITests.swift; sourceTree = "<group>"; };
 		F1F2B65E2CD288AC00D5B6A5 /* MovieSearchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F1F2B6722CD28B5F00D5B6A5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F1F2B6752CD28C7C00D5B6A5 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
+		F1F2B6782CD2933000D5B6A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F1F2B67B2CD2961D00D5B6A5 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		F1F2B67D2CD2965900D5B6A5 /* SearchMovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieListModel.swift; sourceTree = "<group>"; };
+		F1F2B67F2CD296C800D5B6A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F1F2B6812CD296D600D5B6A5 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		F1F2B6832CD296E200D5B6A5 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		F1F2B6852CD296F400D5B6A5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		F1F2B6872CD2982D00D5B6A5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F1F2B6892CD2995700D5B6A5 /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		F1F2B68C2CD29C9700D5B6A5 /* MovieInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F1F2B68D2CD29C9700D5B6A5 /* MovieInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F1F2B6912CD29E6400D5B6A5 /* ImageCacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheHelper.swift; sourceTree = "<group>"; };
+		F1F2B6932CD29F5B00D5B6A5 /* SearchViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Delegates.swift"; sourceTree = "<group>"; };
+		F1F2B6952CD2A05C00D5B6A5 /* LoadingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F2B6992CD2A08E00D5B6A5 /* RappleProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +134,10 @@
 				F1F2B66D2CD28A8A00D5B6A5 /* Models */,
 				F1F2B66C2CD28A8000D5B6A5 /* Network */,
 				F1F2B66B2CD28A7400D5B6A5 /* Utilities */,
+				F1F2B67A2CD2936600D5B6A5 /* StoryBoards */,
 				F1F2B63B2CD288A900D5B6A5 /* AppDelegate.swift */,
 				F1F2B63D2CD288A900D5B6A5 /* SceneDelegate.swift */,
-				F1F2B63F2CD288A900D5B6A5 /* ViewController.swift */,
-				F1F2B6412CD288A900D5B6A5 /* Main.storyboard */,
 				F1F2B6442CD288AB00D5B6A5 /* Assets.xcassets */,
-				F1F2B6462CD288AB00D5B6A5 /* LaunchScreen.storyboard */,
 				F1F2B6492CD288AB00D5B6A5 /* Info.plist */,
 			);
 			path = MovieSearchApp;
@@ -139,7 +163,6 @@
 		F1F2B66B2CD28A7400D5B6A5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F1F2B6742CD28C3600D5B6A5 /* ApplicationService */,
 				F1F2B6712CD28B4300D5B6A5 /* Extentions */,
 				F1F2B6702CD28B3200D5B6A5 /* Helpers */,
 				F1F2B6722CD28B5F00D5B6A5 /* Constants.swift */,
@@ -150,6 +173,10 @@
 		F1F2B66C2CD28A8000D5B6A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6852CD296F400D5B6A5 /* AppSettings.swift */,
+				F1F2B67F2CD296C800D5B6A5 /* NetworkManager.swift */,
+				F1F2B6812CD296D600D5B6A5 /* EndPoint.swift */,
+				F1F2B6832CD296E200D5B6A5 /* MovieService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -157,6 +184,8 @@
 		F1F2B66D2CD28A8A00D5B6A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B67B2CD2961D00D5B6A5 /* MovieModel.swift */,
+				F1F2B67D2CD2965900D5B6A5 /* SearchMovieListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +193,8 @@
 		F1F2B66E2CD28AA300D5B6A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B68B2CD29C6C00D5B6A5 /* MovieInfotableViewCell */,
+				F1F2B6772CD292F200D5B6A5 /* SearchView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +202,7 @@
 		F1F2B66F2CD28AAC00D5B6A5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6872CD2982D00D5B6A5 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,6 +210,8 @@
 		F1F2B6702CD28B3200D5B6A5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6912CD29E6400D5B6A5 /* ImageCacheHelper.swift */,
+				F1F2B6952CD2A05C00D5B6A5 /* LoadingHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,16 +219,36 @@
 		F1F2B6712CD28B4300D5B6A5 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6892CD2995700D5B6A5 /* UIView+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		F1F2B6742CD28C3600D5B6A5 /* ApplicationService */ = {
+		F1F2B6772CD292F200D5B6A5 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				F1F2B6752CD28C7C00D5B6A5 /* ApplicationServiceProvider.swift */,
+				F1F2B6782CD2933000D5B6A5 /* SearchViewController.swift */,
+				F1F2B6932CD29F5B00D5B6A5 /* SearchViewController+Delegates.swift */,
 			);
-			path = ApplicationService;
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		F1F2B67A2CD2936600D5B6A5 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				F1F2B6412CD288A900D5B6A5 /* Main.storyboard */,
+				F1F2B6462CD288AB00D5B6A5 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		F1F2B68B2CD29C6C00D5B6A5 /* MovieInfotableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1F2B68C2CD29C9700D5B6A5 /* MovieInfoTableViewCell.swift */,
+				F1F2B68D2CD29C9700D5B6A5 /* MovieInfoTableViewCell.xib */,
+			);
+			path = MovieInfotableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +267,9 @@
 			dependencies = (
 			);
 			name = MovieSearchApp;
+			packageProductDependencies = (
+				F1F2B6982CD2A08E00D5B6A5 /* RappleProgressHUD */,
+			);
 			productName = MovieSearchApp;
 			productReference = F1F2B6382CD288A900D5B6A5 /* MovieSearchApp.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +342,9 @@
 				Base,
 			);
 			mainGroup = F1F2B62F2CD288A900D5B6A5;
+			packageReferences = (
+				F1F2B6972CD2A08E00D5B6A5 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */,
+			);
 			productRefGroup = F1F2B6392CD288A900D5B6A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,6 +363,7 @@
 			files = (
 				F1F2B6452CD288AB00D5B6A5 /* Assets.xcassets in Resources */,
 				F1F2B6482CD288AB00D5B6A5 /* Base in Resources */,
+				F1F2B68E2CD29C9700D5B6A5 /* MovieInfoTableViewCell.xib in Resources */,
 				F1F2B6432CD288A900D5B6A5 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,11 +389,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F2B6762CD28C7C00D5B6A5 /* ApplicationServiceProvider.swift in Sources */,
-				F1F2B6402CD288A900D5B6A5 /* ViewController.swift in Sources */,
+				F1F2B6802CD296C800D5B6A5 /* NetworkManager.swift in Sources */,
+				F1F2B67E2CD2965900D5B6A5 /* SearchMovieListModel.swift in Sources */,
+				F1F2B6962CD2A05C00D5B6A5 /* LoadingHelper.swift in Sources */,
+				F1F2B6862CD296F400D5B6A5 /* AppSettings.swift in Sources */,
+				F1F2B68A2CD2995700D5B6A5 /* UIView+Extentions.swift in Sources */,
+				F1F2B6822CD296D600D5B6A5 /* EndPoint.swift in Sources */,
+				F1F2B67C2CD2961D00D5B6A5 /* MovieModel.swift in Sources */,
+				F1F2B6882CD2982D00D5B6A5 /* SearchViewModel.swift in Sources */,
+				F1F2B6792CD2933000D5B6A5 /* SearchViewController.swift in Sources */,
+				F1F2B68F2CD29C9700D5B6A5 /* MovieInfoTableViewCell.swift in Sources */,
 				F1F2B63C2CD288A900D5B6A5 /* AppDelegate.swift in Sources */,
+				F1F2B6922CD29E6400D5B6A5 /* ImageCacheHelper.swift in Sources */,
 				F1F2B63E2CD288A900D5B6A5 /* SceneDelegate.swift in Sources */,
+				F1F2B6942CD29F5B00D5B6A5 /* SearchViewController+Delegates.swift in Sources */,
 				F1F2B6732CD28B5F00D5B6A5 /* Constants.swift in Sources */,
+				F1F2B6842CD296E200D5B6A5 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +745,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1F2B6972CD2A08E00D5B6A5 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rjeprasad/RappleProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1F2B6982CD2A08E00D5B6A5 /* RappleProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1F2B6972CD2A08E00D5B6A5 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */;
+			productName = RappleProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1F2B6302CD288A900D5B6A5 /* Project object */;
 }

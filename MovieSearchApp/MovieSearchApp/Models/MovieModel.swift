@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieModel: Decodable {
+struct MovieModel: Codable {
     let title: String?
     let movieYear: String?
     let posterImage: String?

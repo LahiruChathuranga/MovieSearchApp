@@ -10,7 +10,7 @@ import Foundation
 struct SearchedMovieListModel: Codable {
     let movies: [MovieModel]?
     let totalResults: String?
-    let response: Bool
+    let response: String?
     
     enum CodingKeys: String, CodingKey {
         case movies = "Search"

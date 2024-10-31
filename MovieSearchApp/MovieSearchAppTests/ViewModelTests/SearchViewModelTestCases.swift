@@ -37,7 +37,7 @@ final class SearchViewModelTestCases: XCTestCase {
             .store(in: &cancellables)
         
         // When
-        sut?.searchMovies(query: searchKey)
+        sut?.searchMovies(query: searchKey, page: 1)
         
         // Then
         wait(for: [expectation], timeout: 5.0)
@@ -49,7 +49,7 @@ final class SearchViewModelTestCases: XCTestCase {
         let searchKey = "unknown movie"
         
         // When
-        sut?.searchMovies(query: searchKey)
+        sut?.searchMovies(query: searchKey, page: 1)
         
         // Then
         XCTAssertTrue(sut?.movies.isEmpty == true)

@@ -10,7 +10,7 @@ import Combine
 @testable import MovieSearchApp
 
 class MockMovieService: MovieServiceProtocol {
-    func searchMovies(query: String) -> AnyPublisher<SearchedMovieListModel, NetworkError> {
+    func searchMovies(query: String, page: Int) -> AnyPublisher<SearchedMovieListModel, NetworkError> {
         if query.lowercased() == "avatar" {
             // Mock data for a successful response
             let mockData = SearchedMovieListModel(movies: [

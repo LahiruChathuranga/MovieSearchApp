@@ -51,7 +51,7 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
         /// set the title
         self.title = "Movie Search"
         /// set the title color
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         /// set the search bar corner radius
@@ -61,9 +61,23 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
         searchTextField.becomeFirstResponder()
     }
     
+    func createLoadMoreFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        let loadMoreButton = UIButton(type: .system)
+        loadMoreButton.setTitle("Load More", for: .normal)
+        loadMoreButton.addTarget(self, action: #selector(loadMoreMovies), for: .touchUpInside)
+        loadMoreButton.frame = footerView.bounds
+        footerView.addSubview(loadMoreButton)
+        return footerView
+    }
+    
     func setupTableView() {
         tableView.register(UINib(nibName: MovieInfoTableViewCell.cellIdentifire, bundle: Bundle.main),
                            forCellReuseIdentifier: MovieInfoTableViewCell.cellIdentifire)
+        tableView.tableFooterView = createLoadMoreFooter()
+        
+        /// initially footer will be hidden
+        tableView.tableFooterView?.isHidden = true
     }
     
     private func setupBindings() {
@@ -102,8 +116,10 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
         } else {
             self.labelNoSearchResults.isHidden = true
         }
-        self.searchTextField.becomeFirstResponder()
-        self.tableView.reloadData()
+        searchTextField.becomeFirstResponder()
+        tableView.reloadData()
+        
+        tableView.tableFooterView?.isHidden = !PaginationManager.shared.isLoadMore
     }
     
     private func showError(_ message: String) {
@@ -125,12 +141,36 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
             })
         } else if tf.text?.count == 0 {
             /// removing all the movies as we're clearing the search text
-            self.viewModel.movies.removeAll()
-            self.labelNoSearchResults.isHidden = true
+            resetDataForEmptySearchText()
         }
     }
     
     private func searchMovieRequest(searchText: String) {
-        viewModel.searchMovies(query: searchText.lowercased())
+        /// if the search text is being updated
+        /// pagination data should be reset
+        /// movie items should be updated
+        PaginationManager.shared.resetPaginationData()
+        viewModel.movies.removeAll()
+        /// load data for 1st page
+        viewModel.searchMovies(query: searchText.lowercased(), page: 1)
+    }
+    
+    @objc private func loadMoreMovies() {
+        // Check if more pages are available
+        let paginationInfo = PaginationManager.shared
+        if paginationInfo.nextPage != 0 && paginationInfo.isLoadMore == true {
+            print("------------------- start ----------------------")
+            print("::: NEXT PAGE:::\(paginationInfo.nextPage)")
+            print("::: IS LOADMORE:::\(paginationInfo.isLoadMore)")
+            print("------------------- end ----------------------")
+            viewModel.searchMovies(query: searchTextField.text?.lowercased() ?? "", page: paginationInfo.nextPage)
+        }
+    }
+    
+    func resetDataForEmptySearchText() {
+        /// removing all the movies as we're clearing the search text
+        viewModel.movies.removeAll()
+        labelNoSearchResults.isHidden = true
+        PaginationManager.shared.resetPaginationData()
     }
 }

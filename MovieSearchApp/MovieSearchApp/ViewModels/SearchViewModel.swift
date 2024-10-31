@@ -10,7 +10,7 @@ import Combine
 
 class SearchViewModel {
     private var movieService: MovieServiceProtocol
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellable: AnyCancellable?
     
     @Published var movies: [MovieModel] = []
     @Published var errorMessage: String?
@@ -20,19 +20,33 @@ class SearchViewModel {
         self.movieService = movieRepository
     }
     
-    func searchMovies(query: String) {
+    func searchMovies(query: String, page: Int) {
         isLoading = true
-        movieService.searchMovies(query: query)
+        cancellable?.cancel()
+        cancellable = movieService.searchMovies(query: query, page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
-                self?.isLoading = false
+                guard let self else { return }
+                self.isLoading = false
                 if case let .failure(error) = completion {
-                    self?.errorMessage = "Error: \(error.localizedDescription)"
+                    self.errorMessage = "Error: \(error.localizedDescription)"
                 }
             }, receiveValue: { [weak self] searchResult in
-                self?.isLoading = false
-                self?.movies = searchResult.movies ?? []
+                guard let self else { return }
+                self.isLoading = false
+                /// Updating pagination data
+                PaginationManager.shared.savePaginationData(dataModel: searchResult, totalItems: self.movies.count)
+                self.handleMovieDataWithPagination(data: searchResult)
             })
-            .store(in: &cancellables)
+    }
+    
+    private func handleMovieDataWithPagination(data: SearchedMovieListModel) {
+        /// if pagination is enabled we'll have to append the data
+        /// unless we can assign to the array
+        if PaginationManager.shared.isLoadMore || PaginationManager.shared.isReachedLastPage {
+            self.movies.append(contentsOf: data.movies ?? [])
+        } else {
+            self.movies = data.movies ?? []
+        }
     }
 }

@@ -13,8 +13,6 @@ class Responsehandler {
             switch urlError.code {
             case .timedOut:
                 return "The request timed out. Please try again later."
-            case .secureConnectionFailed:
-                return "Failed to establish a secure connection. This may be due to an invalid SSL certificate. Please check your internet connection or try again later."
             case .cancelled:
                 return "The request was cancelled."
             case .notConnectedToInternet:

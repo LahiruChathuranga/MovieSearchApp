@@ -16,6 +16,7 @@ class PaginationManager {
     var isLoadMore: Bool = false
     var isReachedLastPage: Bool = false
     
+    /// create pagination info according the `Movie` data getting fromm API
     func savePaginationData(dataModel: SearchedMovieListModel, totalItems: Int) {
         guard let totalResults = dataModel.totalResults, let movies = dataModel.movies else { return }
         
@@ -29,6 +30,7 @@ class PaginationManager {
         }
     }
     
+    /// reset pagination data when needed
     func resetPaginationData() {
         isReachedLastPage = false
         isLoadMore = false

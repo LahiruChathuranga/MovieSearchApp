@@ -7,11 +7,11 @@
 
 import Foundation
 
+/// All the environments need to be defined here
 enum Environment {
     case development
     case production
 }
-
 class AppSettings {
     static let environment: Environment = .development
     

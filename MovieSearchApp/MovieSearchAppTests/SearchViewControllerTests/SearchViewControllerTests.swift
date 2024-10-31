@@ -14,10 +14,20 @@ final class SearchViewControllerTests: XCTestCase {
     var sut: SearchViewController?
 
     override func setUpWithError() throws {
-        sut = SearchViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController
+        sut?.loadViewIfNeeded()
+        
+        sut?.viewModel = SearchViewModel(movieRepository: MockMovieService())
     }
 
     override func tearDownWithError() throws {
         sut = nil
+    }
+    
+    func testResetDataForEmptySearchText() {
+        sut?.resetDataForEmptySearchText()
+        
+        XCTAssertEqual(sut?.labelNoSearchResults.isHidden, true)
     }
 }

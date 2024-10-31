@@ -125,7 +125,10 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
     private func showError(_ message: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return}
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            /// need to hide the no results label
+            labelNoSearchResults.isHidden = true
+            
+            let alert = UIAlertController(title: "Oops", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
         }
@@ -159,10 +162,6 @@ class SearchViewController: UIViewController, LoadingManagerDelegate {
         // Check if more pages are available
         let paginationInfo = PaginationManager.shared
         if paginationInfo.nextPage != 0 && paginationInfo.isLoadMore == true {
-            print("------------------- start ----------------------")
-            print("::: NEXT PAGE:::\(paginationInfo.nextPage)")
-            print("::: IS LOADMORE:::\(paginationInfo.isLoadMore)")
-            print("------------------- end ----------------------")
             viewModel.searchMovies(query: searchTextField.text?.lowercased() ?? "", page: paginationInfo.nextPage)
         }
     }

@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case invalidURL
     case requestFailed
     case decodingFailed
+    case custom(error: String)
 }
 class NetworkManager {
     static let shared = NetworkManager()
@@ -25,15 +26,9 @@ class NetworkManager {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: T.self, decoder: JSONDecoder())
-            .mapError { error in
-                switch error {
-                case let error as URLError:
-                    return .requestFailed  // Handle URL errors specifically
-                case let error as DecodingError:
-                    return .decodingFailed // Handle decoding errors
-                default:
-                    return .requestFailed  // For all other errors
-                }
+            .mapError { error -> NetworkError in
+                let customError = Responsehandler.handle(error: error)
+                return NetworkError.custom(error: customError)
             }
             .eraseToAnyPublisher()
     }

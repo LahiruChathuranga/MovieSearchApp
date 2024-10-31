@@ -36,6 +36,8 @@
 		F1F2B6A42CD3206800D5B6A5 /* PaginationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6A32CD3206800D5B6A5 /* PaginationManager.swift */; };
 		F1F2B6A62CD3311A00D5B6A5 /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6A52CD3311A00D5B6A5 /* String+Extentions.swift */; };
 		F1F2B6A92CD363F500D5B6A5 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6A82CD363F500D5B6A5 /* SearchViewControllerTests.swift */; };
+		F1F2B6AC2CD3700800D5B6A5 /* paginationHelperTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6AB2CD3700800D5B6A5 /* paginationHelperTestCases.swift */; };
+		F1F2B6AF2CD37C1E00D5B6A5 /* Responsehandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B6AE2CD37C1E00D5B6A5 /* Responsehandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		F1F2B6A32CD3206800D5B6A5 /* PaginationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationManager.swift; sourceTree = "<group>"; };
 		F1F2B6A52CD3311A00D5B6A5 /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 		F1F2B6A82CD363F500D5B6A5 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		F1F2B6AB2CD3700800D5B6A5 /* paginationHelperTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginationHelperTestCases.swift; sourceTree = "<group>"; };
+		F1F2B6AE2CD37C1E00D5B6A5 /* Responsehandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsehandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		F1F2B6512CD288AB00D5B6A5 /* MovieSearchAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6AA2CD36FF100D5B6A5 /* PaginationHelperTests */,
 				F1F2B6A72CD363DA00D5B6A5 /* SearchViewControllerTests */,
 				F1F2B69C2CD2BF0600D5B6A5 /* TestHelpers */,
 				F1F2B69B2CD2BEFE00D5B6A5 /* ViewModelTests */,
@@ -186,6 +191,7 @@
 		F1F2B66C2CD28A8000D5B6A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B6AD2CD37C0000D5B6A5 /* ResponseHandler */,
 				F1F2B6852CD296F400D5B6A5 /* AppSettings.swift */,
 				F1F2B67F2CD296C800D5B6A5 /* NetworkManager.swift */,
 				F1F2B6812CD296D600D5B6A5 /* EndPoint.swift */,
@@ -296,6 +302,22 @@
 				F1F2B6A82CD363F500D5B6A5 /* SearchViewControllerTests.swift */,
 			);
 			path = SearchViewControllerTests;
+			sourceTree = "<group>";
+		};
+		F1F2B6AA2CD36FF100D5B6A5 /* PaginationHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1F2B6AB2CD3700800D5B6A5 /* paginationHelperTestCases.swift */,
+			);
+			path = PaginationHelperTests;
+			sourceTree = "<group>";
+		};
+		F1F2B6AD2CD37C0000D5B6A5 /* ResponseHandler */ = {
+			isa = PBXGroup;
+			children = (
+				F1F2B6AE2CD37C1E00D5B6A5 /* Responsehandler.swift */,
+			);
+			path = ResponseHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +466,7 @@
 				F1F2B6822CD296D600D5B6A5 /* EndPoint.swift in Sources */,
 				F1F2B6A42CD3206800D5B6A5 /* PaginationManager.swift in Sources */,
 				F1F2B6A62CD3311A00D5B6A5 /* String+Extentions.swift in Sources */,
+				F1F2B6AF2CD37C1E00D5B6A5 /* Responsehandler.swift in Sources */,
 				F1F2B67C2CD2961D00D5B6A5 /* MovieModel.swift in Sources */,
 				F1F2B6882CD2982D00D5B6A5 /* SearchViewModel.swift in Sources */,
 				F1F2B6792CD2933000D5B6A5 /* SearchViewController.swift in Sources */,
@@ -465,6 +488,7 @@
 				F1F2B6A22CD2BF7F00D5B6A5 /* MovieInfoTableViewCelltests.swift in Sources */,
 				F1F2B6A92CD363F500D5B6A5 /* SearchViewControllerTests.swift in Sources */,
 				F1F2B6A02CD2BF5B00D5B6A5 /* SearchViewModelTestCases.swift in Sources */,
+				F1F2B6AC2CD3700800D5B6A5 /* paginationHelperTestCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

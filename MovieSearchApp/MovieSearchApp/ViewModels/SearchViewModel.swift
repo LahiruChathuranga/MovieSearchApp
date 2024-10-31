@@ -29,11 +29,20 @@ class SearchViewModel {
                 guard let self else { return }
                 self.isLoading = false
                 if case let .failure(error) = completion {
-                    self.errorMessage = "Error: \(error.localizedDescription)"
+                    switch error {
+                    case .custom(error: let errorMessage):
+                        self.errorMessage = errorMessage
+                    default:
+                        break
+                    }
                 }
             }, receiveValue: { [weak self] searchResult in
                 guard let self else { return }
                 self.isLoading = false
+                guard searchResult.error == nil else {
+                    self.errorMessage = "Your search returned too many results.\n Please enter at least 3 characters to start the search"
+                    return
+                }
                 /// Updating pagination data
                 PaginationManager.shared.savePaginationData(dataModel: searchResult, totalItems: self.movies.count)
                 self.handleMovieDataWithPagination(data: searchResult)
